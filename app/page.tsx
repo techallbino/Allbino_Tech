@@ -17,6 +17,7 @@ export default function Page() {
       <AboutSection />
       <SiteFooter />
       <WhatsAppFloat />
+      <CoursePromo />
     </main>
   )
 }
