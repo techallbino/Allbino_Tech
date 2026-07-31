@@ -65,14 +65,14 @@ export function CoursePromo() {
       {/* Modal expandido */}
       {expanded && (
         <div
-          className="fixed inset-0 z-50 flex items-center bg-black/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/80 p-4 backdrop-blur-sm sm:items-center"
           role="dialog"
           aria-modal="true"
           aria-label="Detalhes do Performance Pack"
           onClick={() => setExpanded(false)}
         >
           <div
-            className="relative flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-red-600/40 bg-black shadow-[0_0_60px_-10px_rgba(220,38,38,0.6)]"
+            className="relative my-4 w-full max-w-3xl overflow-hidden rounded-2xl border border-red-600/40 bg-black shadow-[0_0_60px_-10px_rgba(220,38,38,0.6)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Fechar */}
@@ -80,7 +80,7 @@ export function CoursePromo() {
               type="button"
               onClick={() => setExpanded(false)}
               aria-label="Fechar"
-              className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-white ring-1 ring-white/20 backdrop-blur transition hover:bg-red-600"
+              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-white ring-1 ring-white/20 backdrop-blur transition hover:bg-red-600"
             >
               <X className="h-5 w-5" />
             </button>
