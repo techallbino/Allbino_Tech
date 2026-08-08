@@ -5,7 +5,7 @@ import { ContactSection } from '@/components/contact-section'
 import { AboutSection } from '@/components/about-section'
 import { SiteFooter } from '@/components/site-footer'
 import { WhatsAppFloat } from '@/components/whatsapp-float'
-import { CoursePromo } from '@/components/course-promo'
+import { PortfolioSection } from '@/components/portfolio-section'
 
 export default function Page() {
   return (
@@ -13,11 +13,11 @@ export default function Page() {
       <SiteHeader />
       <HeroSection />
       <ServicesSection />
+      <PortfolioSection />
       <ContactSection />
       <AboutSection />
       <SiteFooter />
       <WhatsAppFloat />
-      <CoursePromo />
     </main>
   )
 }

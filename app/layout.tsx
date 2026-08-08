@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   title: 'Allbino Tech | Manutenção de Informática e Criação de Sistemas Web',
   description:
     'Manutenção, limpeza e reajustes de hardware e software, além da criação de landing pages, lojas virtuais e sistemas web sob medida.',
-  generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
