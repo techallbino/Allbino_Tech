@@ -102,7 +102,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen overflow-hidden border-b border-violet-500/10 pt-28"
+      className="relative overflow-hidden border-b border-violet-500/10 pt-24 lg:min-h-screen lg:pt-28"
     >
       {/* Fundo */}
       <div className="pointer-events-none absolute inset-0">
@@ -118,18 +118,18 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid min-h-[650px] items-center gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+        <div className="grid items-center gap-1 pb-6 lg:min-h-[650px] lg:grid-cols-[0.88fr_1.12fr] lg:gap-6 lg:pb-0">
           {/* Texto */}
-          <div className="relative z-20 pb-10 lg:pb-0">
+          <div className="relative z-20 min-w-0 pb-2 lg:pb-0">
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/[0.08] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/[0.08] px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-violet-300 sm:px-4 sm:py-2 sm:text-[11px] sm:tracking-[0.2em]">
                 <Sparkles className="h-3.5 w-3.5" />
                 Tecnologia com confiança
               </div>
             </Reveal>
 
             <Reveal delay={80}>
-              <h1 className="mt-7 max-w-2xl text-5xl font-bold uppercase leading-[0.94] tracking-[-0.055em] text-white sm:text-6xl lg:text-[72px]">
+              <h1 className="mt-5 max-w-2xl text-[clamp(2.35rem,10.5vw,3.05rem)] font-bold uppercase leading-[0.94] tracking-[-0.055em] text-white sm:mt-7 sm:text-6xl lg:text-[72px]">
                 Tecnologia que
                 <span className="block">resolve.</span>
 
@@ -144,7 +144,7 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delay={160}>
-              <p className="mt-7 max-w-xl text-base leading-7 text-white/55 sm:text-lg">
+              <p className="mt-5 max-w-xl text-[15px] leading-6 text-white/55 sm:mt-7 sm:text-lg sm:leading-7">
                 Do desempenho do seu computador à presença digital da sua
                 empresa. Hardware, software e projetos web desenvolvidos com
                 estratégia e atenção aos detalhes.
@@ -152,14 +152,14 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delay={240}>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 grid grid-cols-2 gap-2 sm:mt-9 sm:flex sm:gap-3">
                 <a
                   href={whatsappLink(
                     'Olá! Vim pelo site da Allbino Tech e gostaria de solicitar um orçamento.',
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl bg-white px-7 py-4 text-sm font-bold uppercase tracking-wide text-black transition duration-300 hover:-translate-y-1 hover:shadow-[0_15px_45px_rgba(168,85,247,0.25)]"
+                  className="group relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-xl bg-white px-3 py-3 text-[11px] font-bold uppercase tracking-wide text-black transition duration-300 hover:-translate-y-1 hover:shadow-[0_15px_45px_rgba(168,85,247,0.25)] sm:gap-3 sm:px-7 sm:py-4 sm:text-sm"
                 >
                   <span className="absolute inset-0 translate-y-full bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-transform duration-300 group-hover:translate-y-0" />
 
@@ -172,7 +172,7 @@ export function HeroSection() {
 
                 <a
                   href="#portfolio"
-                  className="group inline-flex items-center justify-center gap-3 rounded-xl border border-violet-500/30 bg-violet-500/[0.07] px-7 py-4 text-sm font-semibold uppercase tracking-wide text-violet-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-violet-400 hover:bg-violet-500/15"
+                  className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-violet-500/30 bg-violet-500/[0.07] px-3 py-3 text-[11px] font-semibold uppercase tracking-wide text-violet-100 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-violet-400 hover:bg-violet-500/15 sm:gap-3 sm:px-7 sm:py-4 sm:text-sm"
                 >
                   Ver portfólio
                   <ArrowDownRight className="h-4 w-4 transition group-hover:translate-x-1 group-hover:translate-y-1" />
@@ -181,32 +181,34 @@ export function HeroSection() {
             </Reveal>
 
             <Reveal delay={320}>
-              <div className="mt-10 flex items-center gap-3 text-sm text-white/45">
-                <BadgeCheck className="h-5 w-5 text-violet-400" />
+              <div className="mt-6 flex items-center gap-2 text-xs text-white/45 sm:mt-10 sm:gap-3 sm:text-sm">
+                <BadgeCheck className="h-4 w-4 shrink-0 text-violet-400 sm:h-5 sm:w-5" />
                 Soluções personalizadas para cada necessidade
               </div>
             </Reveal>
           </div>
 
           {/* Computador sem fundo */}
-          <Reveal delay={160} className="relative">
-            <div className="pc-float-zone relative mx-auto h-[480px] w-full max-w-[700px] sm:h-[600px] lg:h-[690px]">
+          <Reveal delay={160} className="relative -mt-2 min-w-0 lg:mt-0">
+            <div className="pc-float-zone relative mx-auto h-[300px] w-full max-w-[360px] sm:h-[500px] sm:max-w-[580px] lg:h-[690px] lg:max-w-[700px]">
               <div className="absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/25 blur-[110px]" />
 
               <div className="absolute bottom-[7%] left-1/2 h-14 w-[70%] -translate-x-1/2 rounded-[50%] bg-violet-500/30 blur-2xl" />
 
-              <div className="absolute right-0 top-1/2 h-[60%] w-[75%] -translate-y-1/2 rounded-full border border-violet-500/10" />
+              <div className="absolute left-1/2 top-1/2 h-[65%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/25 blur-[75px]" />
 
-              <div className="absolute right-[8%] top-1/2 h-[78%] w-[78%] -translate-y-1/2 rounded-full border border-violet-500/[0.06]" />
+<div className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/20 blur-[120px]" />
 
-              <Image
-              src="/images/hero-pc-transparent.png"
-              alt="Computador Allbino Tech com iluminação roxa"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="pc-float-image relative z-10 object-contain drop-shadow-[0_40px_65px_rgba(88,28,135,0.38)]"
-            />
+<video
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="relative z-10 h-full w-full object-contain drop-shadow-[0_0_5px_rgba(255,255,255,0.35)]"
+>
+  <source src="/videos/mascote.webm" type="video/webm" />
+</video>
 
               {/* Detalhe flutuante */}
               <div className="absolute right-0 top-[25%] z-20 hidden rounded-2xl border border-white/10 bg-black/50 p-4 shadow-2xl backdrop-blur-xl sm:block">
@@ -218,10 +220,10 @@ export function HeroSection() {
 
                   <div>
                     <p className="text-xs font-semibold text-white">
-                      Performance
+                      Bem vindos
                     </p>
                     <p className="text-[10px] uppercase tracking-wider text-white/35">
-                      Hardware otimizado
+                      tecnologia de verdade
                     </p>
                   </div>
                 </div>
@@ -232,7 +234,7 @@ export function HeroSection() {
 
         {/* Diferenciais clicáveis */}
         <Reveal delay={380}>
-          <div className="relative -mt-2 grid overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-xl sm:grid-cols-3">
+          <div className="relative -mt-1 grid grid-cols-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-xl lg:-mt-2">
             {DIFFERENTIALS.map((item, index) => {
               const Icon = item.icon
 
@@ -241,27 +243,27 @@ export function HeroSection() {
                   key={item.title}
                   type="button"
                   onClick={() => setSelectedService(item)}
-                  className={`group relative flex items-center gap-4 px-6 py-5 text-left transition duration-300 hover:bg-violet-500/[0.09] ${
+                  className={`group relative flex min-w-0 flex-col items-center gap-2 px-1.5 py-3 text-center transition duration-300 hover:bg-violet-500/[0.09] sm:flex-row sm:gap-4 sm:px-6 sm:py-5 sm:text-left ${
                     index !== 2
-                      ? 'border-b border-white/[0.07] sm:border-b-0 sm:border-r'
+                      ? 'border-r border-white/[0.07]'
                       : ''
                   }`}
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-violet-500/20 bg-violet-500/[0.09] text-violet-400 transition duration-300 group-hover:scale-110 group-hover:border-violet-400/50 group-hover:bg-violet-500/20">
-                    <Icon className="h-5 w-5" />
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-violet-500/20 bg-violet-500/[0.09] text-violet-400 transition duration-300 group-hover:scale-110 group-hover:border-violet-400/50 group-hover:bg-violet-500/20 sm:h-11 sm:w-11">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                   </span>
 
-                  <div className="flex-1">
-                    <h3 className="text-sm font-semibold uppercase tracking-wide text-white">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-[9px] font-semibold uppercase leading-tight tracking-wide text-white sm:text-sm">
                       {item.title}
                     </h3>
 
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 hidden text-xs text-white/40 sm:block">
                       {item.text}
                     </p>
                   </div>
 
-                  <ArrowUpRight className="h-4 w-4 text-white/20 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-400" />
+                  <ArrowUpRight className="hidden h-4 w-4 text-white/20 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-violet-400 sm:block" />
 
                   <span className="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-500 group-hover:w-full" />
                 </button>

@@ -223,6 +223,24 @@
   will-change: transform;
 }
 
+/* Trilhos compactos do portfólio no celular */
+.mobile-card-rail {
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-card-rail::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  /* Movimento mais lento e discreto em telas pequenas */
+  .pc-float-image {
+    animation-duration: 4s;
+  }
+}
+
 @keyframes pc-automatic-floating {
   0%,
   100% {

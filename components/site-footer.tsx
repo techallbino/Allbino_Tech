@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:flex-row">
         <div className="flex items-center gap-2 font-semibold">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Logo Allbino Tech"
             width={36}
             height={36}

@@ -45,7 +45,7 @@ export function CoursePromo() {
             className="block w-full text-left"
           >
             <Image
-              src="/images/curso-lento.png"
+              src="/images/curso-lento.webp"
               alt="ALLBINOTECH Performance Pack - Guia de otimização para Windows por R$ 14,90"
               width={440}
               height={560}
@@ -87,14 +87,14 @@ export function CoursePromo() {
 
             <div className="grid gap-0 md:grid-cols-2">
               <Image
-                src="/images/curso-lento.png"
+                src="/images/curso-lento.webp"
                 alt="ALLBINOTECH Performance Pack - Seu computador está lento?"
                 width={880}
                 height={1120}
                 className="h-full w-full object-cover"
               />
               <Image
-                src="/images/curso-softwares.png"
+                src="/images/curso-softwares.webp"
                 alt="5 softwares de confiança: limpeza, monitoramento, diagnóstico, análise de armazenamento e remoção de programas"
                 width={880}
                 height={1120}

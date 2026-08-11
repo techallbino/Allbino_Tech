@@ -36,7 +36,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <a href="#inicio" className="flex items-center gap-2 font-semibold tracking-tight">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Logo Allbino Tech"
             width={40}
             height={40}

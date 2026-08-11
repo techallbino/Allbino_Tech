@@ -1,4 +1,4 @@
-    'use client'
+'use client'
 
     import { useEffect, useState } from 'react'
     import Image from 'next/image'
@@ -27,21 +27,21 @@
 
     const HARDWARE_PROJECTS = [
     {
-        image: '/images/portfolio/hardware-limpeza.png',
+        image: '/images/portfolio/hardware-limpeza.webp',
         title: 'Limpeza e manutenção interna',
         category: 'Manutenção preventiva',
         description:
         'Limpeza completa dos componentes, remoção de poeira e verificação das condições do equipamento.',
     },
     {
-        image: '/images/portfolio/hardware-pasta-termica.png',
+        image: '/images/portfolio/hardware-pasta-termica.webp',
         title: 'Troca de pasta térmica',
         category: 'Controle de temperatura',
         description:
         'Substituição da pasta térmica para melhorar a dissipação de calor e evitar superaquecimento.',
     },
     {
-        image: '/images/portfolio/hardware-montagem.png',
+        image: '/images/portfolio/hardware-montagem.webp',
         title: 'Montagem de computadores',
         category: 'Hardware personalizado',
         description:
@@ -51,7 +51,7 @@
 
     const DEVELOPMENT_PROJECTS: DevelopmentProject[] = [
     {
-        image: '/images/portfolio/dev-crm.png',
+        image: '/images/portfolio/dev-crm.webp',
         title: 'CRM para gestão de chamados',
         category: 'Sistema empresarial',
         description:
@@ -59,7 +59,7 @@
         technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'React'],
     },
     {
-        image: '/images/portfolio/dev-techline.png',
+        image: '/images/portfolio/dev-techline.webp',
         title: 'Site institucional Techline',
         category: 'Presença digital',
         description:
@@ -67,7 +67,7 @@
         technologies: ['Next.js', 'TypeScript', 'Tailwind'],
     },
     {
-        image: '/images/portfolio/dev-pagban.png',
+        image: '/images/portfolio/dev-pagban.webp',
         title: 'Dashboard financeiro Pagban',
         category: 'Interface financeira',
         description:
@@ -103,7 +103,7 @@
     return (
         <section
         id="portfolio"
-        className="relative scroll-mt-20 overflow-hidden bg-[#f5f3fa] py-24 text-[#111015] md:py-32"
+        className="relative scroll-mt-20 overflow-hidden bg-[#f5f3fa] py-14 text-[#111015] md:py-32"
         >
         {/* Decoração */}
         <div className="pointer-events-none absolute -right-48 -top-48 h-[500px] w-[500px] rounded-full bg-violet-300/30 blur-[130px]" />
@@ -113,14 +113,14 @@
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
             {/* Cabeçalho */}
             <Reveal>
-            <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end md:gap-8">
                 <div>
-                <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-violet-700 shadow-sm">
+                <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-violet-700 shadow-sm sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.18em]">
                     <Sparkles className="h-4 w-4" />
                     Projetos realizados
                 </span>
 
-                <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.04em] sm:text-5xl md:text-6xl">
+                <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.04em] sm:mt-6 sm:text-5xl md:text-6xl">
                     Nosso trabalho
                     <span className="block text-violet-700">
                     na prática.
@@ -128,7 +128,7 @@
                 </h2>
                 </div>
 
-                <p className="max-w-lg text-base leading-7 text-black/55">
+                <p className="max-w-lg text-sm leading-6 text-black/55 sm:text-base sm:leading-7">
                 Da manutenção de equipamentos ao desenvolvimento de sistemas:
                 conheça alguns trabalhos que representam as soluções da Allbino
                 Tech.
@@ -137,16 +137,16 @@
             </Reveal>
 
             {/* Hardware */}
-            <div className="mt-20">
+            <div className="mt-12 md:mt-20">
             <Reveal>
-                <div className="flex items-end justify-between gap-6 border-b border-black/10 pb-6">
+                <div className="flex items-end justify-between gap-4 border-b border-black/10 pb-4 md:gap-6 md:pb-6">
                 <div>
                     <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-violet-700">
                     <Cpu className="h-4 w-4" />
                     Hardware & Software
                     </span>
 
-                    <h3 className="mt-3 text-3xl font-bold tracking-tight">
+                    <h3 className="mt-2 text-2xl font-bold tracking-tight sm:mt-3 sm:text-3xl">
                     Serviços realizados
                     </h3>
                 </div>
@@ -158,12 +158,12 @@
                 </div>
             </Reveal>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="mobile-card-rail mt-5 grid snap-x snap-mandatory grid-flow-col auto-cols-[86%] gap-4 overflow-x-auto pb-3 md:mt-8 md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0">
                 {HARDWARE_PROJECTS.map((project, index) => (
                 <Reveal key={project.title} delay={index * 80}>
-                    <article className="h-full overflow-hidden rounded-3xl border border-black/[0.08] bg-white shadow-[0_15px_45px_rgba(40,25,70,0.07)]">
+                    <article className="h-full snap-start overflow-hidden rounded-2xl border border-black/[0.08] bg-white shadow-[0_15px_45px_rgba(40,25,70,0.07)] sm:rounded-3xl">
                     {/* Sem zoom e sem botão visualizar */}
-                    <div className="relative aspect-[4/3] overflow-hidden bg-[#ddd9e4]">
+                    <div className="relative h-[220px] overflow-hidden bg-[#ddd9e4] sm:h-auto sm:aspect-[4/3]">
                         <Image
                         src={project.image}
                         alt={project.title}
@@ -177,24 +177,24 @@
                         </div>
                     </div>
 
-                    <div className="p-6">
+                    <div className="p-4 sm:p-6">
                         <div className="flex items-start justify-between gap-4">
                         <div>
                             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-violet-700">
                             {project.category}
                             </p>
 
-                            <h4 className="mt-3 text-xl font-bold">
+                            <h4 className="mt-2 text-lg font-bold sm:mt-3 sm:text-xl">
                             {project.title}
                             </h4>
                         </div>
 
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
-                            <Wrench className="h-5 w-5" />
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700 sm:h-11 sm:w-11">
+                            <Wrench className="h-4 w-4 sm:h-5 sm:w-5" />
                         </span>
                         </div>
 
-                        <p className="mt-4 text-sm leading-6 text-black/50">
+                        <p className="mt-3 line-clamp-2 text-[13px] leading-5 text-black/50 sm:mt-4 sm:line-clamp-none sm:text-sm sm:leading-6">
                         {project.description}
                         </p>
                     </div>
@@ -205,16 +205,16 @@
             </div>
 
             {/* Desenvolvimento */}
-            <div className="mt-24">
+            <div className="mt-14 md:mt-24">
             <Reveal>
-                <div className="flex items-end justify-between gap-6 border-b border-black/10 pb-6">
+                <div className="flex items-end justify-between gap-4 border-b border-black/10 pb-4 md:gap-6 md:pb-6">
                 <div>
                     <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-violet-700">
                     <Code2 className="h-4 w-4" />
                     Desenvolvimento
                     </span>
 
-                    <h3 className="mt-3 text-3xl font-bold tracking-tight">
+                    <h3 className="mt-2 text-2xl font-bold tracking-tight sm:mt-3 sm:text-3xl">
                     Sites e sistemas
                     </h3>
                 </div>
@@ -226,15 +226,15 @@
                 </div>
             </Reveal>
 
-            <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            <div className="mobile-card-rail mt-5 grid snap-x snap-mandatory grid-flow-col auto-cols-[88%] gap-4 overflow-x-auto pb-3 lg:mt-8 lg:grid-flow-row lg:auto-cols-auto lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0">
                 {DEVELOPMENT_PROJECTS.map((project, index) => (
                 <Reveal key={project.title} delay={index * 80}>
-                    <article className="group h-full overflow-hidden rounded-3xl border border-black/10 bg-[#0d0b12] text-white shadow-[0_20px_55px_rgba(35,15,65,0.15)] transition duration-500 hover:-translate-y-2 hover:border-violet-500/50 hover:shadow-[0_30px_70px_rgba(88,28,135,0.22)]">
+                    <article className="group h-full snap-start overflow-hidden rounded-2xl border border-black/10 bg-[#0d0b12] text-white shadow-[0_20px_55px_rgba(35,15,65,0.15)] transition duration-500 hover:-translate-y-2 hover:border-violet-500/50 hover:shadow-[0_30px_70px_rgba(88,28,135,0.22)] sm:rounded-3xl">
                     {/* Efeito somente nos projetos de desenvolvimento */}
                     <button
                         type="button"
                         onClick={() => setSelectedProject(project)}
-                        className="relative block aspect-[16/10] w-full overflow-hidden text-left"
+                        className="relative block h-[210px] w-full overflow-hidden text-left sm:h-auto sm:aspect-[16/10]"
                         aria-label={`Visualizar o projeto ${project.title}`}
                     >
                         <Image
@@ -259,9 +259,9 @@
                         </span>
                     </button>
 
-                    <div className="flex h-[250px] flex-col p-6">
+                    <div className="flex min-h-[190px] flex-col p-4 sm:h-[250px] sm:p-6">
                         <div className="flex items-start justify-between gap-4">
-                        <h4 className="text-xl font-bold leading-tight transition group-hover:text-violet-300">
+                        <h4 className="text-lg font-bold leading-tight transition group-hover:text-violet-300 sm:text-xl">
                             {project.title}
                         </h4>
 
@@ -275,15 +275,15 @@
                         </button>
                         </div>
 
-                        <p className="mt-4 flex-1 text-sm leading-6 text-white/45">
+                        <p className="mt-3 line-clamp-2 flex-1 text-[13px] leading-5 text-white/45 sm:mt-4 sm:line-clamp-none sm:text-sm sm:leading-6">
                         {project.description}
                         </p>
 
-                        <div className="mt-5 flex flex-wrap gap-2">
+                        <div className="mt-4 flex flex-wrap gap-1.5 sm:mt-5 sm:gap-2">
                         {project.technologies.map((technology) => (
                             <span
                             key={technology}
-                            className="rounded-full border border-violet-500/20 bg-violet-500/[0.08] px-3 py-1.5 text-[10px] font-medium text-violet-300"
+                            className="rounded-full border border-violet-500/20 bg-violet-500/[0.08] px-2.5 py-1 text-[9px] font-medium text-violet-300 sm:px-3 sm:py-1.5 sm:text-[10px]"
                             >
                             {technology}
                             </span>
@@ -296,125 +296,15 @@
             </div>
             </div>
 
-            {/* Curso */}
-            <div className="mt-24">
-            <Reveal>
-                <div className="flex items-end justify-between gap-6 border-b border-black/10 pb-6">
-                <div>
-                    <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-red-700">
-                    <BookOpen className="h-4 w-4" />
-                    Conteúdo digital
-                    </span>
-
-                    <h3 className="mt-3 text-3xl font-bold tracking-tight">
-                    Performance Pack
-                    </h3>
-                </div>
-
-                <p className="hidden max-w-sm text-right text-sm leading-6 text-black/45 md:block">
-                    Conteúdo prático para melhorar o desempenho do computador e identificar
-                    problemas com mais facilidade.
-                </p>
-                </div>
-            </Reveal>
-
-            <Reveal delay={100}>
-                <article className="mx-auto mt-8 grid max-w-5xl overflow-hidden rounded-[26px] border border-red-950/20 bg-[#090909] text-white shadow-[0_25px_70px_rgba(80,0,0,0.18)] lg:grid-cols-[0.68fr_1.32fr]">
-                {/* Imagem sem efeito de visualização */}
-                <div className="relative min-h-[390px] overflow-hidden bg-black sm:min-h-[460px] lg:min-h-[510px]">
-                    <Image
-                    src="/images/portfolio/performance-pack.png"
-                    alt="Performance Pack Allbino Tech"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    className="object-contain"
-                    />
-
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                </div>
-
-                <div className="relative flex flex-col justify-center overflow-hidden p-6 sm:p-8 lg:p-10">
-                    <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-red-700/20 blur-[120px]" />
-
-                    <div className="absolute -bottom-40 left-0 h-80 w-80 rounded-full bg-red-950/30 blur-[110px]" />
-
-                    <div className="relative">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-red-400">
-                        <Sparkles className="h-4 w-4" />
-                        Guia prático + bônus
-                    </span>
-
-                    <h4 className="mt-6 max-w-xl text-3xl font-bold leading-tight tracking-[-0.04em] sm:text-4xl">
-                        Mais desempenho.
-                        <span className="block text-red-500">
-                        Mais controle.
-                        </span>
-                        Menos problemas.
-                    </h4>
-
-                    <p className="mt-6 max-w-xl text-base leading-7 text-white/55">
-                        Um material desenvolvido para ajudar você a melhorar o desempenho
-                        do Windows, identificar possíveis falhas e manter seu computador
-                        mais organizado.
-                    </p>
-
-                    <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                        {[
-                        'Limpeza de arquivos desnecessários',
-                        'Monitoramento de desempenho',
-                        'Diagnóstico de falhas',
-                        'Análise de armazenamento',
-                        'Remoção de programas',
-                        'Orientação passo a passo',
-                        ].map((benefit) => (
-                        <div
-                            key={benefit}
-                            className="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.035] px-4 py-3 text-sm text-white/65"
-                        >
-                            <span className="h-2 w-2 shrink-0 rounded-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.8)]" />
-                            {benefit}
-                        </div>
-                        ))}
-                    </div>
-
-                    <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-                        <a
-                        href="https://pay.kiwify.com.br/avC7FQL"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-3 rounded-xl bg-red-600 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:-translate-y-1 hover:bg-red-500 hover:shadow-[0_18px_50px_rgba(220,38,38,0.3)]"
-                        >
-                        Conhecer o Performance Pack
-
-                        <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                        </a>
-
-                        <div>
-                        <p className="text-xs uppercase tracking-wider text-white/35">
-                            Acesso por apenas
-                        </p>
-
-                        <p className="mt-1 text-2xl font-bold text-white">
-                            R$ 14
-                            <span className="text-base text-red-500">,90</span>
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </article>
-            </Reveal>
-            </div>
-
             {/* Chamada final */}
             <Reveal>
-            <div className="mt-20 flex flex-col items-center justify-between gap-7 rounded-[30px] bg-[#111015] px-7 py-9 text-white shadow-2xl md:flex-row md:px-10">
+            <div className="mt-14 flex flex-col items-stretch justify-between gap-5 rounded-2xl bg-[#111015] px-5 py-6 text-white shadow-2xl sm:rounded-[30px] md:mt-20 md:flex-row md:items-center md:gap-7 md:px-10 md:py-9">
                 <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-violet-400">
                     Tem um projeto em mente?
                 </p>
 
-                <h3 className="mt-2 text-2xl font-bold">
+                <h3 className="mt-2 text-xl font-bold sm:text-2xl">
                     Vamos transformar sua ideia em uma solução real.
                 </h3>
                 </div>
@@ -425,7 +315,7 @@
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex shrink-0 items-center gap-3 rounded-xl bg-white px-6 py-4 text-sm font-bold text-black transition hover:-translate-y-1 hover:bg-violet-600 hover:text-white"
+                className="group inline-flex shrink-0 items-center justify-center gap-3 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:-translate-y-1 hover:bg-violet-600 hover:text-white sm:py-4"
                 >
                 Solicitar orçamento
                 <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -437,14 +327,14 @@
         {/* Modal de visualização: somente desenvolvimento */}
         {selectedProject && (
             <div
-            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/85 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-[120] flex items-end justify-center bg-black/85 p-0 backdrop-blur-md sm:items-center sm:p-4"
             role="dialog"
             aria-modal="true"
             aria-label={`Visualização de ${selectedProject.title}`}
             onClick={() => setSelectedProject(null)}
             >
             <div
-                className="animate-in zoom-in-95 relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[#0d0b12] shadow-[0_40px_120px_rgba(0,0,0,0.8)] duration-300"
+                className="animate-in slide-in-from-bottom-6 relative max-h-[92dvh] w-full max-w-6xl overflow-y-auto rounded-t-3xl border border-white/10 bg-[#0d0b12] shadow-[0_40px_120px_rgba(0,0,0,0.8)] duration-300 sm:zoom-in-95 sm:overflow-hidden sm:rounded-3xl"
                 onClick={(event) => event.stopPropagation()}
             >
                 <button
@@ -456,7 +346,7 @@
                 <X className="h-5 w-5" />
                 </button>
 
-                <div className="relative aspect-video max-h-[75dvh]">
+                <div className="relative h-[42dvh] sm:h-auto sm:aspect-video sm:max-h-[75dvh]">
                 <Image
                     src={selectedProject.image}
                     alt={selectedProject.title}
@@ -467,7 +357,7 @@
                 />
                 </div>
 
-                <div className="flex flex-col justify-between gap-5 border-t border-white/10 p-6 text-white sm:flex-row sm:items-center">
+                <div className="flex flex-col justify-between gap-3 border-t border-white/10 p-4 text-white sm:flex-row sm:items-center sm:gap-5 sm:p-6">
                 <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-violet-400">
                     {selectedProject.category}
