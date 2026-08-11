@@ -76,9 +76,20 @@ const DIFFERENTIALS = [
 ]
 
 export function HeroSection() {
-    const [selectedService, setSelectedService] = useState<
+  const [device, setDevice] = useState<'checking' | 'ios' | 'other'>(
+    'checking',
+  )
+  const [selectedService, setSelectedService] = useState<
     (typeof DIFFERENTIALS)[number] | null
   >(null)
+
+  useEffect(() => {
+    const isIOS =
+      /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+
+    setDevice(isIOS ? 'ios' : 'other')
+  }, [])
 
   useEffect(() => {
     if (!selectedService) return
@@ -197,18 +208,30 @@ export function HeroSection() {
 
               <div className="absolute left-1/2 top-1/2 h-[65%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/25 blur-[75px]" />
 
-<div className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/20 blur-[120px]" />
+              <div className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/20 blur-[120px]" />
 
-<video
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-  className="relative z-10 h-full w-full object-contain drop-shadow-[0_0_5px_rgba(255,255,255,0.35)]"
->
-  <source src="/videos/mascote.webm" type="video/webm" />
-</video>
+              {device === 'other' ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Mascote Allbino Tech"
+                  className="relative z-10 h-full w-full object-contain"
+                >
+                  <source src="/videos/mascote.webm" type="video/webm" />
+                </video>
+              ) : (
+                <Image
+                  src="/images/mascote-poster.webp"
+                  alt="Mascote Allbino Tech"
+                  width={700}
+                  height={700}
+                  priority
+                  className="relative z-10 h-full w-full object-contain"
+                />
+              )}
 
               {/* Detalhe flutuante */}
               <div className="absolute right-0 top-[25%] z-20 hidden rounded-2xl border border-white/10 bg-black/50 p-4 shadow-2xl backdrop-blur-xl sm:block">
