@@ -76,19 +76,23 @@ const DIFFERENTIALS = [
 ]
 
 export function HeroSection() {
-  const [device, setDevice] = useState<'checking' | 'ios' | 'other'>(
-    'checking',
-  )
+  // Começa com a imagem para não tentar carregar o WebM antes da detecção.
+  const [useStaticMascot, setUseStaticMascot] = useState(true)
   const [selectedService, setSelectedService] = useState<
     (typeof DIFFERENTIALS)[number] | null
   >(null)
 
   useEffect(() => {
+    const userAgent = navigator.userAgent
     const isIOS =
-      /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      /iPhone|iPad|iPod/i.test(userAgent) ||
       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 
-    setDevice(isIOS ? 'ios' : 'other')
+    const isSafari =
+      /Safari/i.test(userAgent) &&
+      !/Chrome|Chromium|CriOS|Edg|OPR|FxiOS/i.test(userAgent)
+
+    setUseStaticMascot(isIOS || isSafari)
   }, [])
 
   useEffect(() => {
@@ -204,31 +208,43 @@ export function HeroSection() {
             <div className="pc-float-zone relative mx-auto h-[300px] w-full max-w-[360px] sm:h-[500px] sm:max-w-[580px] lg:h-[690px] lg:max-w-[700px]">
               <div className="absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/25 blur-[110px]" />
 
-            <div className="absolute inset-0">
-  <Image
-    src="/images/mascote-fundo-roxo.png"
-    alt=""
-    width={1414}
-    height={2000}
-    priority
-    aria-hidden="true"
-    className="absolute left-1/2 top-1/2 z-0 h-[105%] w-[105%]
-    -translate-x-1/2 -translate-y-1/2 object-contain"
-  />
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/mascote-fundo-roxo.png"
+                  alt=""
+                  width={1414}
+                  height={2000}
+                  priority
+                  aria-hidden="true"
+                  className="absolute left-1/2 top-1/2 z-0 h-[105%] w-[105%] -translate-x-1/2 -translate-y-1/2 object-contain"
+                />
 
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="metadata"
-    aria-label="Mascote Allbino Tech"
-    className="absolute left-1/2 top-1/2 z-10 h-[53%] w-[53%]
-    -translate-x-1/2 -translate-y-1/2 object-contain"
-  >
-    <source src="/videos/mascote-hero.webm" type="video/webm" />
-  </video>
-</div>
+                {useStaticMascot ? (
+                  <Image
+                    src="/images/mascote-poster.webp"
+                    alt="Mascote Allbino Tech"
+                    width={1000}
+                    height={1000}
+                    priority
+                    className="absolute left-1/2 top-1/2 z-10 h-[53%] w-[53%] -translate-x-1/2 -translate-y-1/2 object-contain"
+                  />
+                ) : (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    aria-label="Mascote Allbino Tech"
+                    className="absolute left-1/2 top-1/2 z-10 h-[53%] w-[53%] -translate-x-1/2 -translate-y-1/2 object-contain"
+                  >
+                    <source
+                      src="/videos/mascote-hero.webm"
+                      type="video/webm"
+                    />
+                  </video>
+                )}
+              </div>
 
               {/* Detalhe flutuante */}
               <div className="absolute right-0 top-[25%] z-20 hidden rounded-2xl border border-white/10 bg-black/50 p-4 shadow-2xl backdrop-blur-xl sm:block">
