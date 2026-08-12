@@ -204,34 +204,31 @@ export function HeroSection() {
             <div className="pc-float-zone relative mx-auto h-[300px] w-full max-w-[360px] sm:h-[500px] sm:max-w-[580px] lg:h-[690px] lg:max-w-[700px]">
               <div className="absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-600/25 blur-[110px]" />
 
-              <div className="absolute bottom-[7%] left-1/2 h-14 w-[70%] -translate-x-1/2 rounded-[50%] bg-violet-500/30 blur-2xl" />
+            <div className="absolute inset-0">
+  <Image
+    src="/images/mascote-fundo-roxo.png"
+    alt=""
+    width={1414}
+    height={2000}
+    priority
+    aria-hidden="true"
+    className="absolute left-1/2 top-1/2 z-0 h-[105%] w-[105%]
+    -translate-x-1/2 -translate-y-1/2 object-contain"
+  />
 
-              <div className="absolute left-1/2 top-1/2 h-[65%] w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/25 blur-[75px]" />
-
-              <div className="absolute left-1/2 top-1/2 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/20 blur-[120px]" />
-
-              {device === 'other' ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label="Mascote Allbino Tech"
-                  className="relative z-10 h-full w-full object-contain"
-                >
-                  <source src="/videos/mascote.webm" type="video/webm" />
-                </video>
-              ) : (
-                <Image
-                  src="/images/mascote-poster.webp"
-                  alt="Mascote Allbino Tech"
-                  width={700}
-                  height={700}
-                  priority
-                  className="relative z-10 h-full w-full object-contain"
-                />
-              )}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="metadata"
+    aria-label="Mascote Allbino Tech"
+    className="absolute left-1/2 top-1/2 z-10 h-[53%] w-[53%]
+    -translate-x-1/2 -translate-y-1/2 object-contain"
+  >
+    <source src="/videos/mascote-hero.webm" type="video/webm" />
+  </video>
+</div>
 
               {/* Detalhe flutuante */}
               <div className="absolute right-0 top-[25%] z-20 hidden rounded-2xl border border-white/10 bg-black/50 p-4 shadow-2xl backdrop-blur-xl sm:block">
